@@ -10,7 +10,7 @@ function App() {
   const [card, setCard] = React.useState(null);
 
   React.useEffect(() => {
-    const websocket = socket("http://localhost:8000");
+    const websocket = socket();
     websocket.on("connect", () => {
       setConnected(true);
       websocket.emit("register", id);

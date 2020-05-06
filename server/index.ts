@@ -1,8 +1,7 @@
 import express from "express";
 import http from "http";
 import socketIO from "socket.io";
-import { createSocket } from "dgram";
-
+import path from "path";
 const app = express();
 
 const httpServer = http.createServer(app);
@@ -12,13 +11,12 @@ let socketMapping = {};
 
 io.on("connection", (socket) => {
   console.log("User Connected");
+
   socket.on("register", (id) => {
     socketMapping[id] = [...(socketMapping[id] || []), socket];
 
-    socket.emit("card.id", "44012bb8-17b7-4b50-a796-662ef09bfc29");
-
     socket.on("card.push", (cardId) => {
-      console.log("broadcasting Card", cardId);
+      console.log("Broadcasting Card", cardId);
       socketMapping[id].forEach((targetSocket) => {
         targetSocket.emit("card.id", cardId);
       });
@@ -36,6 +34,12 @@ io.on("connection", (socket) => {
     console.log("Disconnected");
   });
 });
-app.get("/", (req, res) => res.json({ running: true }));
 
-httpServer.listen(8000);
+app.use(express.static("../client/build"));
+app.get("*", (req, res) =>
+  res.sendFile(path.resolve("..", "client", "build", "index.html"))
+);
+
+const PORT = process.env.PORT || 3000;
+
+httpServer.listen(PORT);

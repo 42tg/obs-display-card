@@ -53,7 +53,7 @@ function App(props) {
   };
 
   useEffect(() => {
-    websocket = socket("http://localhost:8000");
+    websocket = socket();
     websocket.on("connect", () => {
       websocket.emit("register", id);
     });
