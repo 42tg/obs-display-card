@@ -11,6 +11,7 @@ import {
   TableCell,
   Icon,
   TableBody,
+  Typography,
 } from "@material-ui/core";
 import { Link, useParams } from "react-router-dom";
 
@@ -18,17 +19,25 @@ import { from, timer, merge as mergeStatic } from "rxjs";
 import { concatMap, ignoreElements } from "rxjs/operators";
 
 const fetchCard = async (name) => {
-  const card = name.match(/^(?:\d*) ([a-zA-Z,' -]+)/);
-  if (!card || !card[1]) return null;
-  const cardName = encodeURIComponent(card[1].toLowerCase());
-  const data = await fetch(
+  const line = name.match(/^(?:\d*) ([a-zA-Z,' -]+)/);
+  if (!line || !line[1]) return null;
+  const cardName = encodeURIComponent(line[1].toLowerCase());
+  const card = await fetch(
     `https://api.scryfall.com/cards/named?exact=${cardName}`
   ).then((res) => res.json());
-  if (data?.object === "error") {
-    console.error(data);
+  if (card?.object === "error") {
+    console.error(card);
     return null;
   }
-  return data;
+  console.log(card);
+  //find translated card
+  const de = await fetch(
+    `https://api.scryfall.com/cards/${card.set}/${card.collector_number}/de`
+  ).then((res) => res.json());
+  if (de.printed_name) {
+    return { ...card, printed_name: de.printed_name };
+  }
+  return card;
 };
 let websocket = null;
 
@@ -156,13 +165,30 @@ const DecklistView = ({ decklist, onClick }) => {
           </TableHead>
           <TableBody>
             {decklist
-              .filter((card) =>
-                card.name.toLowerCase().includes(quicksearch.toLowerCase())
+              .filter(
+                (card) =>
+                  card.name.toLowerCase().includes(quicksearch.toLowerCase()) ||
+                  card?.printed_name
+                    ?.toLowerCase()
+                    .includes(quicksearch.toLowerCase())
               )
               .map((card) => {
                 return (
                   <TableRow key={card.id}>
-                    <TableCell>{card.name}</TableCell>
+                    <TableCell>
+                      <Typography gutterBottom variant="body1" component="h2">
+                        {card.name}
+                      </Typography>
+                      {card.printed_name && (
+                        <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                        >
+                          {card.printed_name}
+                        </Typography>
+                      )}
+                    </TableCell>
                     <TableCell>
                       <Button
                         onClick={() => onClick(card.id)}
