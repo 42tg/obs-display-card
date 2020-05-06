@@ -186,7 +186,15 @@ const Trademark = (props) => {
   const [open, setOpen] = React.useState(false);
   return (
     <div style={props.style || {}}>
-      obs-display-cards © 2020. All rights reserved.
+      Build with ❤ on{" "}
+      <a
+        href="https://github.com/42tg/obs-display-card"
+        rel="noopener noreferrer"
+        target="_blank"
+        alt="42tg/obs-display-card"
+      >
+        github.com
+      </a>
       <br />
       Wizards of the Coast, Magic: The Gathering, and their logos are trademarks
       of Wizards of the Coast LLC in the United States and other countries. ©
