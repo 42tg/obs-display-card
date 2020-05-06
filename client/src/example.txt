@@ -1,0 +1,102 @@
+Main
+1 Queen Marchesa # !Commander
+
+All Attack
+1 Goblin Spymaster
+1 Crown of Doom
+1 Avatar of Slaughter
+1 Crescendo of War
+1 War's Toll
+1 Mob Rule
+1 Fumiko the Lowblood
+1 Warmonger Hellkite
+1 The Akroan War
+
+Protect the Queen
+1 Sphere of Safety
+1 Blind Obedience
+1 Ghostly Prison
+1 Norn's Annex
+1 Marchesa's Decree
+1 Blood Reckoning
+1 Revenge of Ravens
+1 Hissing Miasma
+1 Behind the Scenes
+
+Queens Guard
+1 Ajani Steadfast
+1 Sorin, Lord of Innistrad #(Owned)
+1 Rowan, Fearless Sparkmage
+1 Gideon Jura #(Owned)
+1 Ob Nixilis Reignited #(Owned)
+
+The last watch
+1 Iroas, God of Victory
+1 Xantcha, Sleeper Agent
+1 Sun Titan
+1 Kazuul, Tyrant of the Cliffs
+1 Varchild, Betrayer of Kjeldor
+1 Brutal Hordechief
+1 Archetype of Courage
+1 Aven Mindcensor
+1 Teysa, Envoy of Ghosts
+1 Odric, Master Tactician #(Owned)
+1 Frontline Medic
+1 Orzhov Advokist
+1 Baird, Steward of Argive
+1 Ankle Shanker
+
+Ensure the Tax is payed
+1 Luminarch Ascension
+1 Exsanguinate
+1 Overwhelming Splendor
+1 Debt to the Deathless
+1 Underworld Connections #(Owned)
+1 Mardu Ascendancy
+
+Execute the foolish
+1 Angel of the Dire Hour
+1 Boros Charm
+1 Chaos Warp #(Owned)
+1 Winds of Abandon #(Owned)
+1 Swords to Plowshares
+1 Return to Dust
+1 Utter End
+1 Generous Gift
+1 Rakdos Charm
+1 Sunblast Angel
+1 Despark
+1 Mortify #(Owned)
+
+cannibalize the kingdom
+1 Path of Ancestry #(Owned)
+1 Silent Clearing #(Owned)
+1 Dragonskull Summit #(Owned)
+1 Vault of the Archangel
+1 Talisman of Indulgence #(Owned)
+1 Sol Ring #(Owned)
+1 Smoldering Marsh
+1 Reliquary Tower #(Owned)
+1 Shinka, the Bloodsoaked Keep
+1 Caves of Koilos #(Owned)
+1 Bojuka Bog #(Owned)
+1 Fellwar Stone #(Owned)
+1 Commander's Sphere #(Owned)
+1 Throne of the High City
+1 Temple of Malice
+1 Ash Barrens #(Owned)
+1 Command Tower #(Owned)
+1 Temple of Triumph
+1 Exotic Orchard #(Owned)
+1 Worn Powerstone #(Owned)
+1 Rogue's Passage #(Owned)
+8 Plains #(Owned)
+1 Nomad Outpost
+1 Talisman of Conviction
+1 Talisman of Hierarchy #(Owned)
+1 Boros Signet
+1 Orzhov Signet #(Owned)
+1 Terramorphic Expanse #(Owned)
+1 Evolving Wilds #(Owned)
+4 Swamp #(Owned)
+4 Mountain #(Owned)
