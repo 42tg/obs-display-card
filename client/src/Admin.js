@@ -18,12 +18,16 @@ import { from, timer, merge as mergeStatic } from "rxjs";
 import { concatMap, ignoreElements } from "rxjs/operators";
 
 const fetchCard = async (name) => {
-  const card = name.match(/^(?:\d*) ([a-zA-Z,' ]+)/);
+  const card = name.match(/^(?:\d*) ([a-zA-Z,' -]+)/);
   if (!card || !card[1]) return null;
   const cardName = encodeURIComponent(card[1].toLowerCase());
   const data = await fetch(
     `https://api.scryfall.com/cards/named?exact=${cardName}`
   ).then((res) => res.json());
+  if (data?.object === "error") {
+    console.error(data);
+    return null;
+  }
   return data;
 };
 let websocket = null;
